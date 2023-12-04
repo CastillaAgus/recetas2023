@@ -1,4 +1,4 @@
-*{
+/* *{
     background-color: black;
     color: azure;
 }
@@ -17,6 +17,63 @@
         width: 230px;
         height: 345px;
     }
+
+    
+
+    @media(max-width:560px){
+        .recetaImage{
+            width:90%;
+            height: auto;  
+        }
+    } */
+
+    *{
+        background-color: antiquewhite;
+    }
+    .recetasCard{
+        list-style: none;
+        font-style:oblique;
+        font-size: 1rem;
+        text-align: center;
+        
+        margin-bottom: 1rem;
+    }
+    .recetasCard a {
+        text-decoration: none; /* Esto quitará el subrayado a los enlaces dentro de .recetasCard */
+        /* Otros estilos para los enlaces si es necesario */
+        color:brown ;
+        font-weight: bold;
+    }
+
+
+   .recetaImage{
+        border-radius: 10px;
+        background-color: azure;
+        width: 308.33px;
+        height: 231px;
+        transition: filter 0.3s;
+        filter: grayscale(1.1);
+        margin-bottom: 1rem;
+    }
+    .recetaImage:hover {
+        filter: grayscale(0%); /* Al pasar el ratón por encima, anula la escala de grises (imagen en color) */
+        transform: scale(1.15);
+    }
+    /* Estilos para el botón */
+.volverButton {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 12px;
+    margin-top: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .volverButton:hover {
+    background-color: #2980b9;
+  }
 
     
 

@@ -18,7 +18,7 @@ export const App = ()=>{
       </header>
       <Routes>
         <Route path="/" element = {<LandingPage/>}/>
-        <Route path="/receta/:id" element = {<DetalleReceta />}/>
+        <Route path="/receta/:id" element = {<DetalleReceta/>}/>
      
       </Routes>
     </BrowserRouter>

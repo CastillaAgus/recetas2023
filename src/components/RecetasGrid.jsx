@@ -17,6 +17,9 @@ useEffect(()=>{
 
 
    return (
+  
+
+
    <ul className="recetasGrid">
       
       {recetas.map((receta)=>(
@@ -25,5 +28,6 @@ useEffect(()=>{
  
       
     </ul>
+    
   );
  };
