@@ -1,15 +1,26 @@
-.recetasGrid{
+/* .recetasGrid{
     display: grid;
     grid-template-columns: repeat(auto-fill,230px);
     gap:40px;
     padding: 40px;
     justify-content: center;
     
-}
+}*/
 
 @media (max-width:560px){
     .recetasGrid{
         grid-template-columns:100%
 }
+} 
+
+.recetasGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,308.33px);
+    gap:25px;
+    padding: 40px;
+    justify-content: center;
+    
 }
+
+
 
