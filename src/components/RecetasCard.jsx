@@ -3,8 +3,8 @@ import {Link} from "react-router-dom"
 import "./RecetasCard.css"
 
 export const RecetasCard = ({ receta }) => {
-  const imgURL=`https://spoonacular.com/recipeImages/${receta.image}`;
- 
+  
+  const imgURL=`${receta.image}`;
   return (
     <li className="recetasCard">
       <Link to={`/receta/${receta.id}`}>

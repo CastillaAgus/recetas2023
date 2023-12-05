@@ -1,7 +1,7 @@
 const API = "https://api.spoonacular.com";
 
 export const get = (path) => {
-  const apiKey = "9cddf6168b7d48e2929932fb69c7ca7c";
+  const apiKey = "6d85b7b20a7241678dba8453fc4846a2"; //api de mi user
 
   return fetch(API + path, {
     headers: {

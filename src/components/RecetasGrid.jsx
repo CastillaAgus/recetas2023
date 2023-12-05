@@ -9,7 +9,7 @@ export const RecetasGrid = () => {
   const [recetas,setRecetas] = useState([])
 
 useEffect(()=>{
-get("/recipes/complexSearch").then((data)=>{
+  get("/recipes/complexSearch").then((data)=>{
   console.log(data);
   setRecetas(data.results)
 })

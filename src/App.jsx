@@ -1,8 +1,13 @@
-import "./App.css"
+import "./App.css";
+import { LandingPage } from "./page/LandingPage";
+import { DetalleReceta } from "./page/DetalleReceta";
+import { ConsultaIngredientes } from "./components/ConsultaIngredientes";
+
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom"
 
-import { RecetasGrid } from "./components/RecetasGrid.jsx"
-import { LandingPage } from "./page/LandingPage.jsx"
+// import { RecetasGrid } from "./components/RecetasGrid.jsx"
+
+
 
 export const App = ()=>{
   return(
@@ -14,7 +19,9 @@ export const App = ()=>{
       </header>
       <Routes>
         <Route path="/" element = {<LandingPage/>}/>
-        <Route path="/receta/:id" element = "detalle de la receta"/>
+        <Route path="/receta/:id" element = {<DetalleReceta />}/>
+        
+        <Route path="/consultaingredientes" element = {<ConsultaIngredientes />}/>
      
       </Routes>
     </BrowserRouter>

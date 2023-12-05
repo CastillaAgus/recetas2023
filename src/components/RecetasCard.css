@@ -1,4 +1,8 @@
-    
+*{
+    background-color: black;
+    color: azure;
+}
+
     .recetasCard{
         list-style: none;
         font-size: 1.5rem;
