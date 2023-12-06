@@ -1,47 +1,51 @@
+
+
 import { get } from "../../utils/httpCliente";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+//importaciones
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+
+
 
 export const ConsultaIngredientes = () => {
-  const [ingrediente, setIngrediente] = useState("");
-  const [ingrediente2, setIngrediente2] = useState("");
-  const [ingrediente3, setIngrediente3] = useState("");
-  const navigate = useNavigate();
 
-  const apiKey = "06c72c72f57643c78a666296fcacf2ce"; // Reemplaza con tu clave de API válida
+    const [ingrediente, setIngrediente] = useState("Ingrese ingrediente")
+    const [ingrediente2, setIngrediente2] = useState("Ingrese ingrediente")
+    const [ingrediente3, setIngrediente3] = useState("Ingrese ingrediente")
 
-  const createConsulta = async (e) => {
-    e.preventDefault();
 
-    const ingredientes = [ingrediente, ingrediente2, ingrediente3]
-      .filter(Boolean) // Filtrar ingredientes vacíos
-      .join(",");
+    //navegacion luego de que se ejecute la funcion
+    const navigate = useNavigate();
 
-    if (ingredientes) {
-      try {
-        const response = await get(
-          `/recipes/findByIngredients?ingredients=${ingredientes}&apiKey=${apiKey}`
-        );
-        console.log(response);
 
-        // Lógica adicional para manejar la respuesta, por ejemplo, redirigir a una página de resultados
-        navigate(`/resultados?ingredientes=${ingredientes}`);
-      } catch (error) {
-        console.error("Error al realizar la consulta:", error);
-        // Puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
-      }
-    } else {
-      console.warn("Ingresa al menos un ingrediente");
-      // Puedes mostrar un mensaje al usuario indicando que al menos un ingrediente debe ser ingresado
+
+    //Funcion para crear cONSUTLA
+
+    const CreateConsulta = async (e) => {
+        e.preventDefault();
+
+
+        ingrediente: ingrediente,
+        get(`/recipes/findByIngredients?ingredients=${ingrediente},+${ingrediente2},+${ingrediente3}`).then((data) => {
+            console.log(data);
+
+    
+        })
+        navigate(get(`/recipes/findByIngredients?ingredients=${ingrediente}`))
+        navigate(`/recipes/findByIngredients?ingredients=${ingrediente}`)
+
     }
-  };
 
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <h1>Ingrese Ingredientes:</h1>
-          <form onSubmit={createConsulta}>
+
+
+
+    return (
+
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <h1>Ingrese Ingredientes:</h1>
+                    <form onSubmit={CreateConsulta}>
                         <div className="mb-3">
                             <label className="form-label">Ingrediente 1: </label>
 
@@ -87,8 +91,15 @@ export const ConsultaIngredientes = () => {
                         </div>
                         <button type="submit" className="btn btn-primary">Consultar Ingrediente</button>
                     </form>
+                    
+
+                </div>
+            </div>
+
+
         </div>
-      </div>
-    </div>
-  );
-};
+
+
+
+    )
+}
