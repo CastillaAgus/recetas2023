@@ -42,12 +42,51 @@ export const ConsultaIngredientes = () => {
         <div className="col">
           <h1>Ingrese Ingredientes:</h1>
           <form onSubmit={createConsulta}>
-            {/* ... (código existente) */}
+                        <div className="mb-3">
+                            <label className="form-label">Ingrediente 1: </label>
 
-            <button type="submit" className="btn btn-primary">
-              Consultar Ingredientes
-            </button>
-          </form>
+
+                            <input
+                                value={ingrediente}
+                                onChange={(e) => setIngrediente(e.target.value)}
+                                className="form-control"
+                                placeholder={ingrediente}
+                                type="text" />
+
+
+                        </div>
+
+
+                        <div className="mb-3">
+                            <label className="form-label">Ingrediente 2: </label>
+
+
+                            <input
+                                value={ingrediente2}
+                                onChange={(e) => setIngrediente2(e.target.value)}
+                                className="form-control"
+                                placeholder={ingrediente2}
+                                type="text" />
+
+
+                        </div>
+
+
+                        <div className="mb-3">
+                            <label className="form-label">Ingrediente 3: </label>
+
+
+                            <input
+                                value={ingrediente3}
+                                onChange={(e) => setIngrediente3(e.target.value)}
+                                className="form-control"
+                                placeholder={ingrediente3}
+                                type="text" />
+
+
+                        </div>
+                        <button type="submit" className="btn btn-primary">Consultar Ingrediente</button>
+                    </form>
         </div>
       </div>
     </div>

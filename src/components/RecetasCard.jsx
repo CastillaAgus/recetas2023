@@ -30,18 +30,16 @@ export const RecetasCard = ({ receta }) => {
   const location = useLocation();
 
   return (
-    <li className="recetasCard">
+    
+    <li className="recetasCard">{/*Lista de las 10 recetas*/}
+      
       <Link to={`/receta/${receta.id}`}>
         <img className="recetaImage" src={imgURL} alt={receta.title} />
-        <div>{receta.title}</div>
+        <div>{receta.title}</div> {/* Titulo de cada receta */}
       </Link>
 
-      {/* Renderiza el botón solo si no estás en la página principal */}
-      {location.pathname !== "/" && (
-        <Link to="/">
-          <button className="volverButton">Volver a todas las recetas</button>
-        </Link>
-      )}
+      
     </li>
+   
   );
 };

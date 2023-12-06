@@ -56,7 +56,7 @@
         margin-bottom: 1rem;
     }
     .recetaImage:hover {
-        filter: grayscale(0%); /* Al pasar el ratón por encima, anula la escala de grises (imagen en color) */
+        filter: grayscale(0%); /* Ratón por encima, anula la escala de grises (imagen en color) */
         transform: scale(1.15);
     }
     /* Estilos para el botón */
