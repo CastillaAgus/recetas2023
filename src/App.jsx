@@ -13,7 +13,7 @@ export const App = ()=>{
     <BrowserRouter>
       <header >
         <Link to="/">
-      <h1 className="title">Recetas</h1>
+      {/* <h1 className="title">Recetas</h1> */}
       </Link> 
       </header>
       <Routes>

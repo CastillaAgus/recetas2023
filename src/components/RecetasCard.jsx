@@ -23,6 +23,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./RecetasCard.css";
+import "./RecetasGrid.css";
 
 export const RecetasCard = ({ receta }) => {
   const imgURL = `${receta.image}`;

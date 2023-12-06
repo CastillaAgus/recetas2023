@@ -17,8 +17,10 @@ useEffect(()=>{
 
 
    return (
-  
-
+  <div>
+    <header>
+        <h1>Mis Recetas Favoritas</h1>
+      </header>
 
    <ul className="recetasGrid">
       
@@ -28,6 +30,6 @@ useEffect(()=>{
  
       
     </ul>
-    
+    </div>
   );
  };
