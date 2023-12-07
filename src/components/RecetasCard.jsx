@@ -20,16 +20,16 @@
 
 
 //2
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+//import React from "react";
+import { Link } from "react-router-dom"; //elimino useLocation dentro de los {}
 import "./RecetasCard.css";
-import "./RecetasGrid.css";
+//import "./RecetasGrid.css";
 
 export const RecetasCard = ({ receta }) => {
   const imgURL = `${receta.image}`;
   //const location = useLocation();
 
-  return (
+  return ( //es la grilla de RecetasGrid.jsx
     
     <li className="recetasCard">{/*Lista de las 10 recetas*/}
       

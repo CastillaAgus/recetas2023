@@ -8,7 +8,7 @@
 }*/
 header {
    
-    background-color: rgb(119, 121, 58, 0.05); 
+    background-color: rgb(119, 121, 58, 0.35); 
     position: fixed;
     top: 0;
     left: 0;
@@ -18,7 +18,7 @@ header {
     align-items: center;
     justify-content: center; /* Centrar horizontalmente */
     padding: 10px 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2); */
     z-index: 1;
     
   }
@@ -27,9 +27,6 @@ header {
     margin-top: 100px;
   }
   
-  header h1 {
-    font-size: 36px; /* Tamaño del texto */
-  }
  
 @media (max-width:560px){
     .recetasGrid{

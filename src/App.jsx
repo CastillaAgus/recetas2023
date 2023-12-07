@@ -12,9 +12,9 @@ export const App = ()=>{
   return(
     <BrowserRouter>
       <header >
-        <Link to="/">
-      {/* <h1 className="title">Recetas</h1> */}
-      </Link> 
+        <a to="/" >
+       <h1 className="title">Recetas</h1> 
+      </a> 
       </header>
       <Routes>
         <Route path="/" element = {<LandingPage/>}/>

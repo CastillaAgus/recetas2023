@@ -18,9 +18,9 @@ useEffect(()=>{
 
    return (
   <div>
-    <header>
+    {/* <header>
         <h1>Mis Recetas Favoritas</h1>
-      </header>
+      </header> */}
 
    <ul className="recetasGrid">
       
