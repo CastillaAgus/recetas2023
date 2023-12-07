@@ -31,12 +31,9 @@ export const ConsultaIngredientes = () => {
 
     
         })
-        // navigate(get(`/recipes/findByIngredients?ingredients=${ingrediente}`))
-        // navigate(`/recipes/findByIngredients?ingredients=${ingrediente}`)
-        get(`/recipes/findByIngredients?ingredients=${ingrediente},+${ingrediente2},+${ingrediente3}`).then((data) => {
-            console.log(data);
-            navigate(`/recipes/findByIngredients?ingredients=${ingrediente}`);
-        });
+        navigate(get(`/recipes/findByIngredients?ingredients=${ingrediente}`))
+        navigate(`/recipes/findByIngredients?ingredients=${ingrediente}`)
+
     }
 
 
