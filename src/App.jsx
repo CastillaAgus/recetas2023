@@ -12,13 +12,14 @@ export const App = ()=>{
   return(
     <BrowserRouter>
       <header >
-        <a to="/" >
+       <Link to="/" > <a >
        <h1 className="title">Recetas</h1> 
-      </a> 
+      </a> </Link>
       </header>
       <Routes>
         <Route path="/" element = {<LandingPage/>}/>
         <Route path="/receta/:id" element = {<DetalleReceta/>}/>
+        <Route path="consultaingredientes" element= {<ingrediente/>}/>
      
       </Routes>
     </BrowserRouter>
