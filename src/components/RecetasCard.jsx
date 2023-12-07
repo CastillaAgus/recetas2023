@@ -27,7 +27,7 @@ import "./RecetasGrid.css";
 
 export const RecetasCard = ({ receta }) => {
   const imgURL = `${receta.image}`;
-  const location = useLocation();
+  //const location = useLocation();
 
   return (
     
