@@ -1,105 +1,58 @@
-
-
-import { get } from "../../utils/httpCliente";
-//importaciones
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-
+import React, { useState } from 'react';
+import axios from 'axios';
 
 
 export const ConsultaIngredientes = () => {
+  const [ingrediente, setIngrediente] = useState('');
+  const [recetaEncontrada, setRecetaEncontrada] = useState(null);
 
-    const [ingrediente, setIngrediente] = useState("Ingrese ingrediente")
-    const [ingrediente2, setIngrediente2] = useState("Ingrese ingrediente")
-    const [ingrediente3, setIngrediente3] = useState("Ingrese ingrediente")
+  const handleInputChange = (e) => {
+    setIngrediente(e.target.value);
+  };
 
+  const buscarReceta = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingrediente}&apiKey=06c72c72f57643c78a666296fcacf2ce`
+      );
+      // Muestra todo el objeto JSON en la consola
+      console.log('Respuesta de la API:', response.data);
 
-    //navegacion luego de que se ejecute la funcion
-    const navigate = useNavigate();
+      // Suponiendo que solo queremos la primera receta encontrada
+      const primeraReceta = response.data[0];
+      
+      // Muestra la receta encontrada en la consola
+      console.log('Receta Encontrada:', primeraReceta);
 
-
-
-    //Funcion para crear cONSUTLA
-
-    const CreateConsulta = async (e) => {
-        e.preventDefault();
-
-
-        ingrediente: ingrediente,
-        get(`/recipes/findByIngredients?ingredients=${ingrediente},+${ingrediente2},+${ingrediente3}`).then((data) => {
-            console.log(data);
-
-    
-        })
-        navigate(get(`/recipes/findByIngredients?ingredients=${ingrediente}`))
-        navigate(`/recipes/findByIngredients?ingredients=${ingrediente}`)
-
+      // Actualiza el estado para mostrar la receta encontrada en la interfaz si es necesario
+      setRecetaEncontrada(primeraReceta);
+    } catch (error) {
+      console.error('Error al buscar receta por ingrediente:', error);
     }
+  };
 
+  return (
+    <div className='Buscador'>
+      <h2>Consulta de Recetas por Ingrediente</h2>
+      <div>
+        <label htmlFor="ingrediente">Ingrediente:</label>
+        <input
+          type="text"
+          id="ingrediente"
+          value={ingrediente}
+          onChange={handleInputChange}
+        />
+        <button onClick={buscarReceta}>Buscar Receta</button>
+      </div>
 
-
-
-    return (
-
-        <div className="container">
-            <div className="row">
-                <div className="col">
-                    <h1>Ingrese Ingredientes:</h1>
-                    <form onSubmit={CreateConsulta}>
-                        <div className="mb-3">
-                            <label className="form-label">Ingrediente 1: </label>
-
-
-                            <input
-                                value={ingrediente}
-                                onChange={(e) => setIngrediente(e.target.value)}
-                                className="form-control"
-                                placeholder={ingrediente}
-                                type="text" />
-
-
-                        </div>
-
-
-                        <div className="mb-3">
-                            <label className="form-label">Ingrediente 2: </label>
-
-
-                            <input
-                                value={ingrediente2}
-                                onChange={(e) => setIngrediente2(e.target.value)}
-                                className="form-control"
-                                placeholder={ingrediente2}
-                                type="text" />
-
-
-                        </div>
-
-
-                        <div className="mb-3">
-                            <label className="form-label">Ingrediente 3: </label>
-
-
-                            <input
-                                value={ingrediente3}
-                                onChange={(e) => setIngrediente3(e.target.value)}
-                                className="form-control"
-                                placeholder={ingrediente3}
-                                type="text" />
-
-
-                        </div>
-                        <button type="submit" className="btn btn-primary">Consultar Ingrediente</button>
-                    </form>
-                    
-
-                </div>
-            </div>
-
-
+      {recetaEncontrada && (
+        <div>
+          <h3>Receta Encontrada:</h3>
+          <p>{recetaEncontrada.title}</p>
+          {/* Para mostrar más detalles de la receta si es necesario */}
         </div>
+      )}
+    </div>
+  );
+};
 
-
-
-    )
-}
