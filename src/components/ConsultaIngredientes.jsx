@@ -6,7 +6,7 @@ export const ConsultaIngredientes = () => {
   const [ingrediente, setIngrediente] = useState('');
   const [recetaEncontrada, setRecetaEncontrada] = useState(null);
 
-  const handleInputChange = (e) => {
+  const manejo = (e) => {
     setIngrediente(e.target.value);
   };
 
@@ -35,12 +35,12 @@ export const ConsultaIngredientes = () => {
     <div className='Buscador'>
       <h2>Consulta de Recetas por Ingrediente</h2>
       <div>
-        <label htmlFor="ingrediente">Ingrediente:</label>
+        <label ingre="ingrediente">Ingrediente:</label>
         <input
           type="text"
           id="ingrediente"
           value={ingrediente}
-          onChange={handleInputChange}
+          onChange={manejo}
         />
         <button onClick={buscarReceta}>Buscar Receta</button>
       </div>
@@ -55,4 +55,3 @@ export const ConsultaIngredientes = () => {
     </div>
   );
 };
-
