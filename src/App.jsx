@@ -4,9 +4,6 @@ import { DetalleReceta } from "./page/DetalleReceta";
 import { ConsultaIngredientes } from './components/ConsultaIngredientes';
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom"
 
-
-
-
 export const App = ()=>{
   return(
     <BrowserRouter>

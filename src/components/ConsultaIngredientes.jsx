@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import "./ConsultaIngredientes.css";
 
 export const ConsultaIngredientes = () => {
   const [ingrediente, setIngrediente] = useState('');
@@ -32,26 +32,32 @@ export const ConsultaIngredientes = () => {
   };
 
   return (
-    <div className='Buscador'>
-      <h2>Consulta de Recetas por Ingrediente</h2>
-      <div>
-        <label ingre="ingrediente">Ingrediente:</label>
-        <input
-          type="text"
-          id="ingrediente"
-          value={ingrediente}
-          onChange={manejo}
-        />
-        <button onClick={buscarReceta}>Buscar Receta</button>
-      </div>
-
-      {recetaEncontrada && (
-        <div>
-          <h3>Receta Encontrada:</h3>
-          <p>{recetaEncontrada.title}</p>
-          {/* Para mostrar más detalles de la receta si es necesario */}
+    <div>
+      {/* <header>
+        <h1>Recetas</h1>
+      </header> */}
+      <div className='Orden'>
+        <div >
+        <h2 >Consulta de Recetas por Ingrediente</h2>
+        <div className='Busca'>
+        <span class="icon"><i class="fa fa-search"></i></span>
+          <input
+            type="search" placeholder='Ingrese ingrediente'
+            value={ingrediente}
+            onChange={manejo}
+          />
+          <button class="button-34" role="button" onClick={buscarReceta}>Buscar Receta</button>
+          </div>
         </div>
-      )}
+
+        {recetaEncontrada && (
+          <div>
+            <h3>Receta Encontrada:</h3> 
+            <p>{recetaEncontrada.title}</p>
+            {/* Para mostrar más detalles de la receta si es necesario */}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

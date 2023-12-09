@@ -18,8 +18,10 @@ h1{
     /* background-color:rgb(119, 121, 58, 0.01); */
 }
 
-.Buscador{
+div .Buscador {
   margin-top: 150px;
   text-align: center;
-  
-}
+  height: 100px;
+  }
+
+
