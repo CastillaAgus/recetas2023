@@ -54,9 +54,9 @@ export const ConsultaIngredientes = () => {
           <div>
             <h3>Receta Encontrada:</h3> 
             <p>{recetaEncontrada.title}</p>
-            {/* Para mostrar más detalles de la receta si es necesario */}
+            
           </div>
-        )}
+        )} 
       </div>
     </div>
   );
