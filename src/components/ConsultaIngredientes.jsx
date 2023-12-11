@@ -86,7 +86,7 @@ export const ConsultaIngredientes = () => {
 
 
                         </div>
-                        <button type="submit" className="btn btn-primary">Consultar Ingrediente</button>
+                        <button type="submit" className="btn btn-primary">Consultar Ingrediente</button> 
                     </form>
                     
 
