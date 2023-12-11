@@ -1,4 +1,4 @@
-*{
+/* *{
     background-color: black;
     color: azure;
 }
@@ -29,4 +29,90 @@
             width:90%;
             height: auto;  
         }
+    } */
+
+    *{
+        background-color: none;
     }
+    .recetasCard{
+        list-style: none;
+        font-style:oblique;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .recetasCard a {
+        text-decoration: none; /* Esto quitará el subrayado a los enlaces dentro de .recetasCard */
+        /* Otros estilos para los enlaces si es necesario */
+        color:brown ;
+        font-weight: bold;
+    }
+
+
+   .recetaImage{ /* Toca estilo de RecetasGrid.jsx*/
+    
+        text-decoration: none; /* Agrega esta línea para quitar el subrayado */
+        width: 100%;
+        height: auto;
+      
+        border-radius: 10px;
+        background-color: azure;
+        width: 308.33px;
+        height: 231px;
+        transition: filter 0.3s;
+        filter: grayscale(1.1);
+        margin-top: 15px;
+        
+    }
+    .recetaImage:hover {/* Toca estilo de RecetasGrid.jsx*/
+        filter: grayscale(0%); /* Ratón por encima, anula la escala de grises (imagen en color) */
+        transform: scale(1.15);
+    }
+    /* Estilos para el botón */
+/* .volverButton {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 12px;
+    margin-top: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+  } 
+  
+  .volverButton:hover {
+    background-color: #2980b9;
+  }*/
+  header {
+   
+    background-color: rgb(119, 121, 58, 0.35); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar horizontalmente */
+    padding: 10px 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    
+  }
+
+  ul{
+    margin-top: 100px;
+  }
+  
+  header h1 {
+    font-size: 36px; /* Tamaño del texto */
+  }
+ 
+    
+
+    @media(max-width:560px){
+        .recetaImage{
+            width:90%;
+            height: auto;  
+        }
+    }   
