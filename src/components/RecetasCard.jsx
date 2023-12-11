@@ -9,7 +9,8 @@ export const RecetasCard = ({ receta }) => {
     <li className="recetasCard">
       <Link to={`/receta/${receta.id}`}>
       <img className="recetaImage" src={imgURL} alt={receta.title} />
-      <div>{receta.title}</div>
+      <div className="titulo">{receta.title}</div>
+      
       </Link>
     </li>
   );

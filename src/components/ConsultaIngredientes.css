@@ -1,4 +1,4 @@
-.recetasGrid{
+.consultaGrid{
     display: grid;
     grid-template-columns: repeat(auto-fill,230px);
     gap:40px;
@@ -6,10 +6,3 @@
     justify-content: center;
   
 }
-
-@media (max-width:560px){
-    .recetasGrid{
-        grid-template-columns:100%
-}
-}
-

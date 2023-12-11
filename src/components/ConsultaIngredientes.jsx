@@ -4,20 +4,20 @@ import { get } from "../../utils/httpCliente";
 //importaciones
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-
-
+import { ConsultaCard } from "./ConsultaCard";
+import "./ConsultaIngredientes.css" 
 
 export const ConsultaIngredientes = () => {
 
-    const [ingrediente, setIngrediente] = useState("Ingrese ingrediente")
-    const [ingrediente2, setIngrediente2] = useState("Ingrese ingrediente")
-    const [ingrediente3, setIngrediente3] = useState("Ingrese ingrediente")
+    const [ingrediente, setIngrediente] = useState("")
+    const [ingrediente2, setIngrediente2] = useState("")
+    const [ingrediente3, setIngrediente3] = useState("")
 
 
     //navegacion luego de que se ejecute la funcion
     const navigate = useNavigate();
 
-
+    const [consulta,setConsultas] = useState([])
 
     //Funcion para crear cONSUTLA
 
@@ -26,21 +26,18 @@ export const ConsultaIngredientes = () => {
 
 
         // ingrediente: ingrediente,
-        get(`/recipes/findByIngredients?ingredients=${ingrediente},+${ingrediente2},+${ingrediente3}`).then((data) => {
-            console.log(data);
-
-    
+        get(`/recipes/findByIngredients?ingredients=${ingrediente},+${ingrediente2},+${ingrediente3}`).then((consultas) => {
+            setConsultas(consultas);
         })
+
+       
         //navigate(get(`/recipes/findByIngredients?ingredients=${ingrediente}`))
         // navigate(`/recipes/findByIngredients?ingredients=${ingrediente}`)
 
     }
 
-
-
-
     return (
-
+        <>
         <div className="container">
             <div className="row">
                 <div className="col">
@@ -95,11 +92,12 @@ export const ConsultaIngredientes = () => {
 
                 </div>
             </div>
-
-
         </div>
-
-
-
+        <div className="consultaGrid">
+            {consulta.map((consulta)=>(
+            <ConsultaCard key={consulta.id} consulta={consulta}/>
+        ))}
+        </div>
+        </>
     )
 }

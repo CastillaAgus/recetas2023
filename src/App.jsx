@@ -17,6 +17,7 @@ export const App = ()=>{
       <h1 className="title">Recetas</h1>
       </Link> 
       </header>
+      <Link to="/consultaingredientes"><button>BUSCAR RECETA</button></Link>
       <Routes>
         <Route path="/" element = {<LandingPage/>}/>
         <Route path="/receta/:id" element = {<DetalleReceta />}/>
