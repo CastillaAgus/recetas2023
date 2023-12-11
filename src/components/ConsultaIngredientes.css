@@ -1,12 +1,12 @@
-/* .consultaGrid{
+.consultaGrid{
     display: grid;
-    grid-template-columns: repeat(auto-fill,230px);
+    grid-template-columns: repeat(auto-fill,303px);
     gap:40px;
-    padding: 40px;
+    padding: 35px;
     justify-content: center;
   
-} */
-.Orden{
+}
+.container{
     margin-top: 150px;
     background-color:  rgb(119, 121, 58, 0.35); 
     padding: 30px;
@@ -49,6 +49,7 @@ h2{
   /* word-break: break-word; */
   border: 0;
   margin-left: 20px;
+  margin-top: 10px;
 }
 .Busca{
   width: 400px;
@@ -60,8 +61,12 @@ h2{
 }
 input{
     height: 30px;
+    border: 1px;
 }
 input:hover{
     color:red;
 }
 
+.form-label{
+    text-align: center;
+}
