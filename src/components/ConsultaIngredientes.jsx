@@ -89,7 +89,7 @@ export const ConsultaIngredientes = () => {
 
 
                         </div> */}
-                        <button className= "button-34" type="submit" >Consultar Ingrediente</button> 
+                        <button className= "button-34" type="submit" >Consultar receta</button> 
                     </form>
                     
 
